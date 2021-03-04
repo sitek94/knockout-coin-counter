@@ -1,10 +1,19 @@
 {
   "compilerOptions": {
+
+    /* Basic Options */
+    "target": "ES5",
+    "module": "ES6",
+    "allowJs": true,
     "outDir": "./dist/",
     "sourceMap": true,
+    "isolatedModules": true,
+
+    /* Strict Type-Checking Options */
     "strict": true,
-    "module": "ES6",
-    "target": "ES5",
-    "allowJs": true
+    
+    /* Module Resolution Options */
+    "baseUrl": "./src",
+    "moduleResolution": "node",
   }
 }

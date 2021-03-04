@@ -1,9 +1,15 @@
+import printMe from './print';
+
 function component() {
   const element = document.createElement('div');
+  const btn = document.createElement('button');
 
-  const sum = (a, b) => a + b;
+  element.innerHTML = `Hello webpack`;
 
-  element.innerHTML = `Hello webpack ${sum(10, 20)}`;
+  btn.innerHTML = 'Click me and check the console!';
+  btn.onclick = printMe;
+
+  element.appendChild(btn);
 
   return element;
 }

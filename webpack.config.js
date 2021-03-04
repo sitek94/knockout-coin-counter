@@ -10,15 +10,15 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true
+    clean: true,
   },
   devtool: 'source-map',
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Development',
+      template: './templates/index.html',
     }),
   ],
   module: {

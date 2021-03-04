@@ -1,7 +1,9 @@
 function component() {
   const element = document.createElement('div');
 
-  element.innerHTML = 'Hello webpack';
+  const sum = (a, b) => a + b;
+
+  element.innerHTML = `Hello webpack ${sum(10, 20)}`;
 
   return element;
 }

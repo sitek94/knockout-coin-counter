@@ -1,13 +1,12 @@
-import printMe from './printMe';
+import * as ko from 'knockout';
+import { Observable } from 'knockout';
 
-function component() {
-  const element = document.createElement('div');
+class App {
+  title: Observable<string>;
 
-  element.innerHTML = `Hello webpack`;
-
-  printMe();
-
-  return element;
+  constructor() {
+    this.title = ko.observable('Coin Counter');
+  }
 }
 
-document.body.appendChild(component());
+ko.applyBindings(new App(), document.querySelector('#app'));

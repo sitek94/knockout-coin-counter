@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: {
-    index: './src/index.js',
+    index: './src/index.ts',
   },
   output: {
     filename: '[name].bundle.js',
@@ -23,15 +23,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.m?js$/,
+        test: /\.(js|ts)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
-        },
+        loader: 'babel-loader',
       },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.ts'],
   },
 };

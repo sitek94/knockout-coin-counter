@@ -1,12 +1,8 @@
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import * as ko from 'knockout';
-import { Observable } from 'knockout';
+import { CoinCounter } from './CoinCounter';
 
-class App {
-  title: Observable<string>;
 
-  constructor() {
-    this.title = ko.observable('Coin Counter');
-  }
-}
-
-ko.applyBindings(new App(), document.querySelector('#app'));
+ko.applyBindings(new CoinCounter(), document.querySelector('#app'));

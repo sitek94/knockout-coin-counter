@@ -1,6 +1,6 @@
 {
   "name": "webpack-typescript-starter-kit",
-  "description": "A simple starter kit setup with webpack and typescript.",
+  "description": "A webpack and typescript starter kit.",
   "author": "Maciek Sitkowski",
   "version": "1.0.0",
   "private": true,

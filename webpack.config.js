@@ -13,9 +13,12 @@ module.exports = {
     clean: true
   },
   devtool: 'source-map',
+  devServer: {
+    contentBase: './dist'
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Output Management',
+      title: 'Development',
     }),
   ],
   module: {

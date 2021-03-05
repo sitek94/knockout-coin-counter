@@ -9,8 +9,7 @@
   </head>
 
   <body>
-    <div id="app">
-
+    <div id="app" class="container">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Coin Counter</a>
@@ -73,6 +72,70 @@
           </ul>
         </div>
       </nav>
+
+      <!-- Game screen -->
+      <section class="container" data-bind="visible: gameVisible()">
+        <div class="row pt-3">
+          <div
+            class="col-md-5 xxl"
+            data-bind="text: whatTheUserShouldBeDoing()"
+          ></div>
+          <div class="col-md-3 xxl">
+            <span data-bind="text: gameClock.timeRemainingFormatted"></span>
+            <button
+              class="btn btn-lg btn-info"
+              data-bind="click: resumeGame, enable: isPaused(), visible: isPaused()"
+            >
+              Resume
+            </button>
+            <button
+              class="btn btn-md"
+              data-bind="click: pauseGame, enable: canBePaused(), visible: canBePaused()"
+            >
+              Pause
+            </button>
+          </div>
+          <div class="col-md-4 xl" data-bind="text: scoreText() "></div>
+        </div>
+        <div class="row">
+          <div class="col-md-12"><hr /></div>
+        </div>
+        <div data-bind="foreach: coins">
+          <div class="row">
+            <div class="col-md-2">
+              <span class="xl" data-bind="text: name"></span>
+            </div>
+            <div class="col-md-2 unselectable">
+              <button
+                class="btn btn-lg btn-coin glyphicon glyphicon-minus"
+                data-bind="click: $parent.removeCoin, enable: $parent.removeCoinEnabled($data)"
+              ></button>
+              <button
+                class="btn btn-lg btn-coin glyphicon glyphicon-plus"
+                data-bind="click: $parent.addCoin, enable: $parent.addCoinEnabled($data)"
+              ></button>
+            </div>
+            <div class="col-md-1">
+              <span class="xxl" data-bind="text: count"></span>
+            </div>
+            <div
+              class="col-md-7 coinDiv"
+              data-bind="attr: {id: $parent.destinationDivIDForCoin($data)}"
+            ></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-10">
+            <button
+              class="btn btn-primary btn-lg btn-lg-wide"
+              data-bind="click: checkForVictory, enable: buttonsEnabled()"
+            >
+              Go
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
   </body>
 </html>

@@ -42,7 +42,7 @@ export class GameClock {
     this.secondsRemaining(this.secondsRemaining() + numberOfSeconds);
   }
 
-  _tick() {
+  _tick = () => {
     if (!this.isRunning()) {
       return;
     }

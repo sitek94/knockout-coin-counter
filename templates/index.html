@@ -136,6 +136,41 @@
           </div>
         </div>
       </section>
+
+      <!-- Player name modal -->
+      <div
+        class="modal fade"
+        id="nameModal"
+        role="dialog"
+        data-keyboard="false"
+        data-backdrop="static"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Welcome to Coin Counter</h4>
+            </div>
+            <div class="modal-body">
+              <span data-bind="text:playerNameQuestion"></span>
+              <input
+                id="playerNameInput"
+                type="text"
+                data-bind="value: playerName"
+              />
+              <button
+                id="playerNameOK"
+                data-dismiss="modal"
+                role="button"
+                class="btn btn-primary"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </body>
 </html>

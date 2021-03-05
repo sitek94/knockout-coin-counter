@@ -13,8 +13,11 @@ export class Coin {
   value: Big;
   imgSrc: any;
   max: Observable<number>;
+  count: Observable<number>;
   addCoinEnabled?: Computed<boolean>;
   removeCoinEnabled?: Computed<boolean>;
+  canTakeAway: Computed<boolean>;
+  canAddMore: Computed<boolean>;
 
   constructor(name: string, imgSrc: any, value: Big, max: number = 10) {
     this.name = name;
@@ -22,16 +25,15 @@ export class Coin {
     this.value = value;
     this.imgSrc = imgSrc;
     this.max = ko.observable(max);
+    this.count = ko.observable(0);
+    this.canTakeAway = ko.computed(() => this.count() > 0);
+    this.canAddMore = ko.computed(() => this.count() < this.max());
   }
-
-  count = ko.observable(0);
-  canTakeAway = ko.computed(() => this.count() > 0);
-  canAddMore = ko.computed(() => this.count() < this.max());
 }
 
 /**
  * All the available coins:
- * 
+ *
  * Penny, Nickel, Dime, Quarter
  */
 export const coins = [

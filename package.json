@@ -1,6 +1,6 @@
 {
-  "name": "webpack-typescript-starter-kit",
-  "description": "A webpack and typescript starter kit.",
+  "name": "knockout-coin-counter",
+  "description": "Migrating existing project from JavaScript to TypeScript.",
   "author": "Maciek Sitkowski",
   "version": "1.0.0",
   "private": true,
@@ -37,6 +37,5 @@
   "keywords": [
     "webpack",
     "typescript"
-  ],
-  "license": "MIT"
+  ]
 }

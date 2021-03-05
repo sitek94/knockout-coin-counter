@@ -200,7 +200,20 @@
         </div>
       </div>
 
-   
+      <!-- Status popup -->
+      <section>
+        <div
+          class="popup"
+          id="splash"
+          tabindex="-1"
+          role="dialog"
+          data-bind="visible: statusMessageVisible"
+        >
+          <span data-bind="html: statusMessage"></span>
+        </div>
+      </section>
+
+
     </div>
   </body>
 </html>

@@ -170,7 +170,37 @@
         </div>
       </div>
 
+      <!-- Game over modal -->
+      <div
+        class="modal fade"
+        id="gameOverModal"
+        role="dialog"
+        data-keyboard="false"
+        data-backdrop="static"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Game Over!</h4>
+            </div>
+            <div class="modal-body">
+              <div data-bind="html: endOfGameMessage"></div>
+            </div>
+            <div class="modal-footer">
+              <button
+                class="btn btn-primary"
+                data-bind="click: startBrandNewGame"
+                data-dismiss="modal"
+              >
+                Play again!
+              </button>
+              <button class="btn" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
+   
     </div>
   </body>
 </html>

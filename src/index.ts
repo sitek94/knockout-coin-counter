@@ -6,8 +6,4 @@ import * as $ from 'jquery';
 
 import { CoinCounter } from './CoinCounter';
 
-$('#myBtn').on('click', () => {
-  $('#myModal').modal('toggle');
-});
-
 ko.applyBindings(new CoinCounter(), document.querySelector('#app'));
